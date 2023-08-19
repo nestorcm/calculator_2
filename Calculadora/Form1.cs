@@ -234,6 +234,10 @@ namespace Calculadora
                     Result = valueFirst / 100;
                     txtResultado.Text = Result.ToString();
                     break;
+                case "-/+":
+                    Result = valueFirst *-1;
+                    txtResultado.Text = Result.ToString();
+                    break;
             }
         }
 
@@ -356,14 +360,9 @@ namespace Calculadora
 
         private void masmenosbtn_Click(object sender, EventArgs e)
         {
-            if (!txtResultado.Text.Contains("-"))
-            {
-                txtResultado.Text = txtResultado.Text.Trim('-');
-            }
-            else
-            {
-                txtResultado.Text = "-" + txtResultado.Text;
-            }
+            valueFirst = double.Parse(txtResultado.Text);
+            txtResultado.Clear();
+            operators = "-/+";
         }
 
         private void btnResta_Click_1(object sender, EventArgs e)
@@ -412,7 +411,7 @@ namespace Calculadora
         {
             valueFirst = double.Parse(txtResultado.Text);
             txtResultado.Clear();
-            operators = "% ";
+            operators = "%";
         }
     }
 }
