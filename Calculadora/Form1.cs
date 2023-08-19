@@ -2,9 +2,9 @@ namespace Calculadora
 {
     public partial class Form1 : Form
     {
-        private decimal valueFirst = 0.0m;
-        private decimal valueSecond = 0.0m;
-        private decimal Result = 0.0m;
+        private double valueFirst = 0.0;
+        private double valueSecond = 0.0;
+        private double Result = 0.0;
         private String operators = "+";
         public Form1()
         {
@@ -28,7 +28,7 @@ namespace Calculadora
 
         private void button12_Click(object sender, EventArgs e)
         {
-            valueFirst = decimal.Parse(txtResultado.Text);
+            valueFirst = double.Parse(txtResultado.Text);
             txtResultado.Clear();
             operators = "+";
 
@@ -185,13 +185,27 @@ namespace Calculadora
             switch (operators)
             {
                 case "+":
-                    valueSecond = decimal.Parse(txtResultado.Text);
+                    valueSecond = double.Parse(txtResultado.Text);
                     Result = valueFirst + valueSecond;
                     txtResultado.Text = Result.ToString();
                     break;
                 case "-":
-                    valueSecond = decimal.Parse(txtResultado.Text);
+                    valueSecond = double.Parse(txtResultado.Text);
                     Result = valueFirst - valueSecond;
+                    txtResultado.Text = Result.ToString();
+                    break;
+                case "*":
+                    valueSecond = double.Parse(txtResultado.Text);
+                    Result = valueFirst * valueSecond;
+                    txtResultado.Text = Result.ToString();
+                    break;
+                case "^":
+                    valueSecond = double.Parse(txtResultado.Text);
+                    Result = Math.Pow(valueFirst, valueSecond);
+                    txtResultado.Text = Result.ToString();
+                    break;
+                case "|x|":
+                    Result = Math.Abs(valueFirst);
                     txtResultado.Text = Result.ToString();
                     break;
             }
@@ -307,9 +321,9 @@ namespace Calculadora
 
         private void btnPunto_Click_1(object sender, EventArgs e)
         {
-            if (!txtResultado.Text.Contains("."))
+            if (!txtResultado.Text.Contains(","))
             {
-                txtResultado.Text += ".";
+                txtResultado.Text += ",";
             }
 
         }
@@ -328,9 +342,30 @@ namespace Calculadora
 
         private void btnResta_Click_1(object sender, EventArgs e)
         {
-            valueFirst = decimal.Parse(txtResultado.Text);
+            valueFirst = double.Parse(txtResultado.Text);
             txtResultado.Clear();
             operators = "-";
         }
+
+        private void btnMulti_Click(object sender, EventArgs e)
+        {
+            valueFirst = double.Parse(txtResultado.Text);
+            txtResultado.Clear();
+            operators = "*";
+        }
+
+        private void btnPotencia_Click(object sender, EventArgs e)
+        {
+            valueFirst = double.Parse(txtResultado.Text);
+            txtResultado.Clear();
+            operators = "^";
+        }
+
+        private void btnValorAbsoluto_Click(object sender, EventArgs e)
+        {
+            valueFirst = double.Parse(txtResultado.Text);
+            txtResultado.Clear();
+            operators = "|x|";
+        }
     }
-}
+    }

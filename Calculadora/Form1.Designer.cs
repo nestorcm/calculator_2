@@ -230,6 +230,7 @@
             btnMulti.TabIndex = 15;
             btnMulti.Text = "*";
             btnMulti.UseVisualStyleBackColor = true;
+            btnMulti.Click += btnMulti_Click;
             // 
             // btnDivicion
             // 
@@ -260,6 +261,7 @@
             btnPotencia.TabIndex = 18;
             btnPotencia.Text = "^";
             btnPotencia.UseVisualStyleBackColor = true;
+            btnPotencia.Click += btnPotencia_Click;
             // 
             // btnRaiz
             // 
@@ -280,6 +282,7 @@
             btnValorAbsoluto.TabIndex = 20;
             btnValorAbsoluto.Text = "|x|";
             btnValorAbsoluto.UseVisualStyleBackColor = true;
+            btnValorAbsoluto.Click += btnValorAbsoluto_Click;
             // 
             // btnPunto
             // 
