@@ -6,7 +6,7 @@ namespace Calculadora
         private double valueSecond = 0.0;
         private double Result = 0.0;
         private String operators = "+";
-        private char operators2 ;
+        private char operators2;
         public Form1()
         {
             InitializeComponent();
@@ -224,6 +224,16 @@ namespace Calculadora
                     Result = valueFirst / valueSecond;
                     txtResultado.Text = Result.ToString();
                     break;
+                case "? ":
+                    //valueSecond = double.Parse(txtResultado.Text);
+                    Result = Math.Sqrt(valueFirst);
+                    txtResultado.Text = Result.ToString();
+                    break;
+                case "% ":
+                    //valueSecond = double.Parse(txtResultado.Text);
+                    Result = valueFirst / 100;
+                    txtResultado.Text = Result.ToString();
+                    break;
             }
         }
 
@@ -389,6 +399,20 @@ namespace Calculadora
             valueFirst = double.Parse(txtResultado.Text);
             txtResultado.Clear();
             operators = "/";
+        }
+
+        private void btnRaiz_Click(object sender, EventArgs e)
+        {
+            valueFirst = double.Parse(txtResultado.Text);
+            txtResultado.Clear();
+            operators = "? ";
+        }
+
+        private void btnPorcentaje_Click(object sender, EventArgs e)
+        {
+            valueFirst = double.Parse(txtResultado.Text);
+            txtResultado.Clear();
+            operators = "% ";
         }
     }
 }

@@ -252,6 +252,7 @@
             btnPorcentaje.TabIndex = 17;
             btnPorcentaje.Text = "%";
             btnPorcentaje.UseVisualStyleBackColor = true;
+            btnPorcentaje.Click += btnPorcentaje_Click;
             // 
             // btnPotencia
             // 
@@ -273,6 +274,7 @@
             btnRaiz.TabIndex = 19;
             btnRaiz.Text = "√ ";
             btnRaiz.UseVisualStyleBackColor = true;
+            btnRaiz.Click += btnRaiz_Click;
             // 
             // btnValorAbsoluto
             // 
@@ -292,7 +294,7 @@
             btnPunto.Name = "btnPunto";
             btnPunto.Size = new Size(70, 70);
             btnPunto.TabIndex = 21;
-            btnPunto.Text = ".";
+            btnPunto.Text = ",";
             btnPunto.UseVisualStyleBackColor = true;
             btnPunto.Click += btnPunto_Click_1;
             // 
