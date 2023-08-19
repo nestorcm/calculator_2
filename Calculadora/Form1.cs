@@ -221,13 +221,30 @@ namespace Calculadora
                     break;
                 case "/":
                     valueSecond = double.Parse(txtResultado.Text);
-                    Result = valueFirst / valueSecond;
-                    txtResultado.Text = Result.ToString();
+
+
+                    if (valueSecond == 0)
+                    {
+                        txtResultado.Text = " error, no se puede dividir por cero"; //Result.ToString()
+
+                    } else {
+                        Result = valueFirst / valueSecond;
+                        txtResultado.Text = Result.ToString();
+                    }
                     break;
-                case "? ":
+                case "?":
                     //valueSecond = double.Parse(txtResultado.Text);
-                    Result = Math.Sqrt(valueFirst);
-                    txtResultado.Text = Result.ToString();
+                    if (valueFirst < 0)
+                    {
+                        txtResultado.Text = " Error,no ingresar valores negativos"; //Result.ToString()
+
+                    }
+                    else
+                    {
+                        Result = Math.Sqrt(valueFirst);
+                        txtResultado.Text = Result.ToString();
+                    }
+                    
                     break;
                 case "% ":
                     //valueSecond = double.Parse(txtResultado.Text);
@@ -404,7 +421,7 @@ namespace Calculadora
         {
             valueFirst = double.Parse(txtResultado.Text);
             txtResultado.Clear();
-            operators = "? ";
+            operators = "?";
         }
 
         private void btnPorcentaje_Click(object sender, EventArgs e)
