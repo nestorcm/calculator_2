@@ -60,7 +60,6 @@
             txtResultado.Location = new Point(3, 1);
             txtResultado.Multiline = true;
             txtResultado.Name = "txtResultado";
-            txtResultado.ReadOnly = true;
             txtResultado.Size = new Size(432, 33);
             txtResultado.TabIndex = 0;
             txtResultado.Text = "0";

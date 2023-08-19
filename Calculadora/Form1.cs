@@ -227,7 +227,9 @@ namespace Calculadora
                     {
                         txtResultado.Text = " error, no se puede dividir por cero"; //Result.ToString()
 
-                    } else {
+                    }
+                    else
+                    {
                         Result = valueFirst / valueSecond;
                         txtResultado.Text = Result.ToString();
                     }
@@ -244,15 +246,15 @@ namespace Calculadora
                         Result = Math.Sqrt(valueFirst);
                         txtResultado.Text = Result.ToString();
                     }
-                    
+
                     break;
-                case "% ":
-                    //valueSecond = double.Parse(txtResultado.Text);
-                    Result = valueFirst / 100;
+                case "%":
+                    valueSecond = double.Parse(txtResultado.Text);
+                    Result = valueFirst * (valueSecond / 100);
                     txtResultado.Text = Result.ToString();
                     break;
                 case "-/+":
-                    Result = valueFirst *-1;
+                    Result = valueFirst * -1;
                     txtResultado.Text = Result.ToString();
                     break;
             }
