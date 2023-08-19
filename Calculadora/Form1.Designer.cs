@@ -241,6 +241,7 @@
             btnDivicion.TabIndex = 16;
             btnDivicion.Text = "/";
             btnDivicion.UseVisualStyleBackColor = true;
+            btnDivicion.Click += btnDivicion_Click;
             // 
             // btnPorcentaje
             // 

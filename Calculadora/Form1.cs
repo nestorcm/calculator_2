@@ -6,6 +6,7 @@ namespace Calculadora
         private double valueSecond = 0.0;
         private double Result = 0.0;
         private String operators = "+";
+        private char operators2 ;
         public Form1()
         {
             InitializeComponent();
@@ -13,12 +14,22 @@ namespace Calculadora
 
         private void button11_Click(object sender, EventArgs e)
         {
-
+            valueSecond = 0;
+            valueSecond = 0;
+            operators2 = '\0';
+            txtResultado.Text = "0";
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-
+            if (txtResultado.Text.Length > 1)
+            {
+                txtResultado.Text = txtResultado.Text.Substring(0, txtResultado.Text.Length - 1);
+            }
+            else
+            {
+                txtResultado.Text = "0";
+            }
         }
 
         private void txtResultado_TextChanged(object sender, EventArgs e)
@@ -208,6 +219,11 @@ namespace Calculadora
                     Result = Math.Abs(valueFirst);
                     txtResultado.Text = Result.ToString();
                     break;
+                case "/":
+                    valueSecond = double.Parse(txtResultado.Text);
+                    Result = valueFirst / valueSecond;
+                    txtResultado.Text = Result.ToString();
+                    break;
             }
         }
 
@@ -367,5 +383,12 @@ namespace Calculadora
             txtResultado.Clear();
             operators = "|x|";
         }
+
+        private void btnDivicion_Click(object sender, EventArgs e)
+        {
+            valueFirst = double.Parse(txtResultado.Text);
+            txtResultado.Clear();
+            operators = "/";
+        }
     }
-    }
+}
